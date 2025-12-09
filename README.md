@@ -1,2 +1,2 @@
 # nlp-sentiment-analysis-dashboard
-Sentiment Analysis Dashboard
+Sentiment Analysis Dashboard - NLP  (AI6110 Final Project)
