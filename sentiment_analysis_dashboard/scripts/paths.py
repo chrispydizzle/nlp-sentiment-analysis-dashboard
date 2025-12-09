@@ -1,0 +1,18 @@
+import os
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'data', 'uploads')
+RAW_DATA_PATH = os.path.join(BASE_DIR, 'data', 'raw_data', 'IMDB_Dataset.csv')
+TRAIN_DATA_PATH = os.path.join(BASE_DIR, 'data', 'processed_data', 'train_data.csv')
+TEST_DATA_PATH = os.path.join(BASE_DIR, 'data', 'processed_data', 'test_data.csv')
+LSTM_MODEL_PATH = os.path.join(BASE_DIR, 'models', 'lstm_model.h5')
+TOKENIZER_PICKLE_PATH = os.path.join(BASE_DIR, 'models', 'tokenizer.pickle')
+BLM_MODEL_PATH = os.path.join(BASE_DIR, 'models', 'best_logistic_regression_model.pickle')
+LM_MODEL_PATH = os.path.join(BASE_DIR, 'models', 'logistic_regression_model.pickle')
+TRAIN_DATA_PREPROCESSED = os.path.join(BASE_DIR, 'data', 'processed_data', 'train_data_preprocessed.csv')
+TEST_DATA_PREPROCESSED = os.path.join(BASE_DIR, 'data', 'processed_data', 'test_data_preprocessed.csv')
+MODEL_VECTORIZER = os.path.join(BASE_DIR, 'models', 'vectorizer.pickle')
+DATA_PROCESSED_X_TRAIN = os.path.join(BASE_DIR, 'data', 'processed_data', 'X_train.pickle')
+DATA_PROCESSED_X_TEST = os.path.join(BASE_DIR, 'data', 'processed_data', 'X_test.pickle')
+DATA_X_TRAIN_BALANCED_PICKLE_PATH = os.path.join(BASE_DIR, 'data', 'processed_data', 'X_train_balanced.pickle')
+DATA_Y_TRAIN_BALANCED_PICKLE_PATH = os.path.join(BASE_DIR, 'data', 'processed_data', 'y_train_balanced.pickle')

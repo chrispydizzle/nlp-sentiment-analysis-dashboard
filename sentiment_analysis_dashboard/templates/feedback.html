@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Dashboard</title>
+    <link rel="stylesheet" href="<https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css>">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Sentiment Analysis Dashboard</h1>
+        <form id="feedback-form" class="mt-4">
+            <div class="form-group">
+                <label for="rating">Rate your experience:</label>
+                <select class="form-control" id="rating" name="rating">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+        <div id="feedback-result" class="mt-4"></div>
+    </div>
+
+    <script src="<https://code.jquery.com/jquery-3.5.1.min.js>"></script>
+    <script>
+        $(document).ready(function() {
+            $('#feedback-form').on('submit', function(event) {
+                event.preventDefault();
+                const formData = $(this).serializeArray().reduce((obj, item) => {
+                    obj[item.name] = item.value;
+                    return obj;
+                }, {});
+                $.post('/feedback', JSON.stringify(formData), function(data) {
+                    $('#feedback-result').html(`<h4>${data.message}</h4>`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
