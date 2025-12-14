@@ -81,11 +81,13 @@ def upload_file():
             return jsonify({'message': 'File uploaded successfully'})
     return render_template('upload.html')
 
-@app.route('/feedback', methods=['POST'])
+@app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
-    user_feedback = request.json
-    feedback_data.append(user_feedback)
-    return jsonify({'message': 'Thank you for your feedback!'})
+    if request.method == 'POST':
+        user_feedback = request.json
+        feedback_data.append(user_feedback)
+        return jsonify({'message': 'Thank you for your feedback!'})
+    return render_template('feedback.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
