@@ -1,6 +1,7 @@
 import os
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+# Set BASE_DIR to one directory above the current file (paths.py)
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'data', 'uploads')
 RAW_DATA_PATH = os.path.join(BASE_DIR, 'data', 'raw_data', 'IMDB_Dataset.csv')
 TRAIN_DATA_PATH = os.path.join(BASE_DIR, 'data', 'processed_data', 'train_data.csv')

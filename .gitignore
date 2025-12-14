@@ -208,4 +208,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 /.idea/
-/sentiment_analysis_dashboard/data/raw_data/IMDB Dataset.csv
+/sentiment_analysis_dashboard/data/raw_data/IMDB_Dataset.csv
+*.pickle
+*.csv
