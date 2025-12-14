@@ -1,7 +1,15 @@
 from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import LogisticRegression
+import pickle
 import paths
 
 if __name__ == '__main__':
+    # Load the balanced training data
+    with open(paths.DATA_X_TRAIN_BALANCED_PICKLE_PATH, 'rb') as file:
+        X_train = pickle.load(file)
+    with open(paths.DATA_Y_TRAIN_BALANCED_PICKLE_PATH, 'rb') as file:
+        y_train = pickle.load(file)
+
     # Define hyperparameters to tune
     param_grid = {
         'C': [0.01, 0.1, 1, 10, 100],

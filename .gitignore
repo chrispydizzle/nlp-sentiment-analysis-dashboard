@@ -211,3 +211,4 @@ __marimo__/
 /sentiment_analysis_dashboard/data/raw_data/IMDB_Dataset.csv
 *.pickle
 *.csv
+/sentiment_analysis_dashboard/models/lstm_model.h5
