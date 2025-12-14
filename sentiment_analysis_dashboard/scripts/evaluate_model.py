@@ -11,13 +11,13 @@ if __name__ == '__main__':
 
     # Extract features and labels
     X_train = train_data['review']
-    y_train = train_data['sentiment']
-    X_test = test_data['review']
-    y_test = test_data['sentiment']
+    with open(paths.DATA_PROCESSED_X_TEST, 'rb') as file:
+        X_test = pickle.load(file)
     # Load the best Logistic Regression model
     with open(paths.BLM_MODEL_PATH, 'rb') as file:
         best_model = pickle.load(file)
 
+    y_test = test_data['sentiment']
     # Predict on the test set
     y_pred = best_model.predict(X_test)
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     print(classification_report(y_test, y_pred))
 
     # Plot confusion matrix
-    cm = confusion_matrix(y_test, y_pred, labels=[0, 1])
+    cm = confusion_matrix(y_test, y_pred)
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Negative', 'Positive'])
     disp.plot(cmap=plt.cm.Blues)
     plt.show()
